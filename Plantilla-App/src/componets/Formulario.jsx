@@ -43,7 +43,7 @@ export const Formulario = ({paciente}) => {
         else {
 		        try {
 		            const token = localStorage.getItem('token')
-		            form.id = auth._id
+		            //form.id = auth._id
 		            const url = `${import.meta.env.VITE_BACKEND_URL}/paciente/registro`
 		            const options={
 		                headers: {
@@ -57,7 +57,8 @@ export const Formulario = ({paciente}) => {
 		                navigate('/dashboard/listar');
 		            }, 3000);
 		        } catch (error) {
-								setMensaje({ respuesta: error.response.data.msg, tipo: false })
+                            //setMensaje({ respuesta: error.response?.data.msg, tipo: false })
+                            console.log(error)
 		            setTimeout(() => {
 		                setMensaje({})
 		            }, 3000);
